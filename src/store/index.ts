@@ -1,7 +1,9 @@
 /* import createAuthStore from './authStore';
-import createCompanyStore from './companyStore';
-import createWorkerStore from './workerStore';
+// import createCompanyStore from './companyStore';
+// import createWorkerStore from './workerStore';
 
-export const authStore = createAuthStore();
-export const cartStore = createCompanyStore();
-export const userStore = createWorkerStore(); */
+// export const authStore = createAuthStore();
+// export const cartStore = createCompanyStore();
+// export const userStore = createWorkerStore(); */
+
+export {}; /* <-- 추후 삭제 */
