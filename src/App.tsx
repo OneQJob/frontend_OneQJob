@@ -3,8 +3,10 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
-  const prettierPrecommitHookTest ={
-    name: 'ginger', age: '12', profession: 'swe'
+  const prettierPrecommitHookTest = {
+    name: "ginger",
+    age: "12",
+    profession: "swe",
   };
 
   return (
@@ -20,7 +22,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-Learn React
+          Learn React
         </a>
       </header>
     </div>
