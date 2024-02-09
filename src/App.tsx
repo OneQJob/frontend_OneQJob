@@ -3,6 +3,10 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
+  const prettierPrecommitHookTest ={
+    name: 'ginger', age: '12', profession: 'swe'
+  };
+
   return (
     <div className="App">
       <header className="App-header">
