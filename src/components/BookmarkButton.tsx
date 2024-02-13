@@ -1,19 +1,18 @@
-import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as solidStar } from "@fortawesome/free-solid-svg-icons";
 import { faStar as regularStar } from "@fortawesome/free-regular-svg-icons";
 
-interface BookmarkButtonProps {
+type BookmarkButtonProps = {
+  isBookmarked: boolean;
+  toggleBookmark: () => void;
   size?: "sm" | "md" | "lg";
-}
+};
 
-const BookmarkButton = ({ size = "md" }: BookmarkButtonProps) => {
-  const [isBookmarked, setIsBookmarked] = useState(false);
-
-  const toggleBookmark = () => {
-    setIsBookmarked(!isBookmarked);
-  };
-
+const BookmarkButton = ({
+  isBookmarked,
+  toggleBookmark,
+  size = "md",
+}: BookmarkButtonProps) => {
   let btnSize;
   if (size === "sm") {
     btnSize = 6;
