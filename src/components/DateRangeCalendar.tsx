@@ -1,6 +1,5 @@
 import { useState } from "react";
 import DateRangePicker from "react-bootstrap-daterangepicker";
-import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-daterangepicker/daterangepicker.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar } from "@fortawesome/free-regular-svg-icons";
@@ -32,7 +31,9 @@ const DateCalendar = () => {
   return (
     <DateRangePicker
       onApply={changeDateRangePicker}
-      initialSettings={{ locale: { applyLabel: "적용", cancelLabel: "취소" } }}
+      initialSettings={{
+        locale: { applyLabel: "적용", cancelLabel: "취소" },
+      }}
     >
       <div className="input-group" style={{ width: 350 }}>
         <input
