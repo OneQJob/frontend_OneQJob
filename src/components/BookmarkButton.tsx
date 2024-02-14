@@ -13,19 +13,12 @@ const BookmarkButton = ({
   toggleBookmark,
   size = "md",
 }: BookmarkButtonProps) => {
-  let btnSize;
-  if (size === "sm") {
-    btnSize = 6;
-  } else if (size === "md") {
-    btnSize = 5;
-  } else {
-    btnSize = 4;
-  }
+  const btnSizeMap = { sm: 6, md: 5, lg: 4 };
 
   return (
     <button
       onClick={toggleBookmark}
-      className={`btn fs-${btnSize} p-0 border-0 bg-transparent d-inline-block lh-1`}
+      className={`btn fs-${btnSizeMap[size]} p-0 border-0 bg-transparent d-inline-block lh-1`}
     >
       {isBookmarked ? (
         <FontAwesomeIcon icon={solidStar} />
