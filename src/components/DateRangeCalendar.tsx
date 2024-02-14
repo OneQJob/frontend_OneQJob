@@ -1,18 +1,19 @@
 import { useState } from "react";
 import DateRangePicker from "react-bootstrap-daterangepicker";
 import "bootstrap-daterangepicker/daterangepicker.css";
+import "moment/locale/ko";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar } from "@fortawesome/free-regular-svg-icons";
-import "moment/locale/ko";
+import { InputGroup, Form } from "react-bootstrap";
 
-interface DateTypes {
+export type DateTypes = {
   startDate: {
     format(date: string): string;
   };
   endDate: {
     format(date: string): string;
   };
-}
+};
 
 const DateCalendar = () => {
   const [selectedDates, setSelectedDates] = useState({
@@ -35,10 +36,9 @@ const DateCalendar = () => {
         locale: { applyLabel: "적용", cancelLabel: "취소" },
       }}
     >
-      <div className="input-group" style={{ width: 350 }}>
-        <input
-          type="text"
-          className="form-control"
+      <InputGroup style={{ width: 350 }}>
+        <Form.Control
+          type="button"
           readOnly
           value={
             selectedDates.startDate && selectedDates.endDate
@@ -48,10 +48,10 @@ const DateCalendar = () => {
           placeholder="0000-00-00 ~ 0000-00-00"
           style={{ textAlign: "center" }}
         />
-        <span className="input-group-text">
+        <InputGroup.Text>
           <FontAwesomeIcon icon={faCalendar} />
-        </span>
-      </div>
+        </InputGroup.Text>
+      </InputGroup>
     </DateRangePicker>
   );
 };
