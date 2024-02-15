@@ -3,7 +3,6 @@ import ImageUploader from "@/components/ImageUploader";
 
 const CompanyRecruit = () => {
   const [multipleFileData, setMultipleFileData] = useState<File[]>([]);
-  const [singleFileData, setSingleFileData] = useState<File | null>(null);
 
   const changeMultipleFileData = (deleteIndex: number) => {
     setMultipleFileData((prevFiles) => {
@@ -31,15 +30,6 @@ const CompanyRecruit = () => {
             </span>
           ))}
         </div>
-      </div>
-
-      <h3 className="mt-3">대표 이미지</h3>
-      <div style={{ display: "flex", alignItems: "center" }}>
-        <ImageUploader
-          multipleFlag={false}
-          setSingleFileData={setSingleFileData}
-        />
-        <span style={{ marginLeft: 10 }}>{singleFileData?.name}</span>
       </div>
     </>
   );
