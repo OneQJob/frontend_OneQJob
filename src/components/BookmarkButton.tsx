@@ -2,11 +2,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as solidStar } from "@fortawesome/free-solid-svg-icons";
 import { faStar as regularStar } from "@fortawesome/free-regular-svg-icons";
 
-type BookmarkButtonProps = {
+interface BookmarkButtonProps {
   isBookmarked: boolean;
   toggleBookmark: () => void;
   size?: "sm" | "md" | "lg";
-};
+}
 
 const BookmarkButton = ({
   isBookmarked,
