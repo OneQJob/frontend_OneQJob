@@ -1,29 +1,33 @@
-import { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
-type AlertModalProps = {
+interface AlertModalProps {
   message: string;
+  show: boolean;
+  onClose: () => void;
   buttonText?: string;
   onConfirm?: () => void;
   redirectTo?: string;
-};
+}
 
 const AlertModal = ({
   message,
+  show,
+  onClose,
   buttonText = "확인",
   onConfirm,
   redirectTo,
 }: AlertModalProps) => {
-  const [show, setShow] = useState(true);
   const navigate = useNavigate();
 
   const handleClose = () => {
+    if (onClose) {
+      onClose();
+    }
+
     if (onConfirm) {
       onConfirm();
     }
-
-    setShow(false);
 
     if (redirectTo) {
       navigate(redirectTo);
