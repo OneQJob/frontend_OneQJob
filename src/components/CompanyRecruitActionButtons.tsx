@@ -2,7 +2,6 @@ import { Fragment, useState } from "react";
 import { Button, Dropdown } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import moment from "moment";
-import AlertModal from "@/components/AlertModal";
 
 interface ActionButtonProps {
   applicationDeadline: Date;
@@ -78,11 +77,7 @@ const CompanyRecruitActionButtons = ({
           </Button>
         ))
       )}
-      <AlertModal
-        message={modalContent}
-        show={showModal}
-        onClose={() => setShowModal(false)}
-      />
+      {/* 추후 AlertModal 컴포넌트 렌더링하고 showModal과 modalContent 인자로 넘겨줌 */}
     </>
   );
 };
